@@ -2,7 +2,8 @@
 
 
 def maxCoins(nums) -> int:
-    t = [[-1]*(len(nums)+1)]*(len(nums)+1)  
+    n = len(nums)  
+    t = [[-1 for _ in range(n)] for _ in range(n)] 
     return solve(nums, 1, len(nums)-1, t)
 
 def solve(nums, i, j, t):
