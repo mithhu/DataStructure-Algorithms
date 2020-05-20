@@ -4,7 +4,7 @@ def rodCutting(arr):
 
     l = [1, 2, 3, 4, 5, 6, 7, 8]
 
-    K = [[-1 for x in range(column)] for y in range(row)]
+    K = [[float("-inf") for x in range(column)] for y in range(row)]
     for i in range(column):
         K[i][0] = 0
     for i in range(row):
