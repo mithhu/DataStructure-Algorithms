@@ -7,10 +7,6 @@ def shortestCommonSupersequence(str1: str, str2: str) -> str:
             else:
                 t[i][j] = max(t[i][j-1], t[i-1][j])
 
-    # i = len(str1)
-    # j = len(str2)
-    # index = t[i][j]
-    # scs = [""] * (index)
     scs = ""
 
     while i > 0 and j > 0:
@@ -20,13 +16,13 @@ def shortestCommonSupersequence(str1: str, str2: str) -> str:
             i -= 1
             j -= 1
         elif t[i-1][j] > t[i][j-1]:
-            scs += str2[j-1]
-            # index -= 1
-            j -= 1
-        else:
             scs += str1[i-1]
             # index -= 1
             i -= 1
+        else:
+            scs += str2[j-1]
+            # index -= 1
+            j -= 1
     while i > 0:
         scs += str1[i-1]
         # index -= 1
@@ -35,7 +31,7 @@ def shortestCommonSupersequence(str1: str, str2: str) -> str:
         scs += str2[j-1]
         # index -= 1
         j -= 1
-    return "".join(scs)
+    return scs
 
 
 print(shortestCommonSupersequence("abac", "cab"))

@@ -9,6 +9,7 @@ def printLongestCommonSubsequence(text1: str, text2: str) -> int:
                 t[i][j] = max(t[i][j-1], t[i-1][j])
 
     index = t[i][j]
+    print(index)
     lcs = [""]*(index)
 
     while i > 0 and j > 0:

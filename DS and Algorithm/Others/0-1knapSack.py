@@ -5,7 +5,11 @@ n = len(val)
 
 
 def knapSack(W, wt, val, n):
+    if W <= 0 or n == 0 or len(wt) != n:
+        return 0
+
     t = [[float("-inf") for _ in range(W+1)] for _ in range(n+1)]
+
     for i in range(W+1):
         t[0][i] = 0
     for i in range(n+1):
