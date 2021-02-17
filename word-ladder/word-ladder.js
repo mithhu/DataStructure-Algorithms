@@ -6,12 +6,12 @@
  */
 var ladderLength = function(beginWord, endWord, wordList) {
     
-    if(beginWord.length === 1) {
-        return wordList[wordList.length - 1] === endWord ? wordList.length - 1 : 0
-    }
+    // if(beginWord.length === 1) {
+    //     return wordList[wordList.length - 1] === endWord ? wordList.length - 1 : 0
+    // }
     
     //WordMap Pattern
-    let patternToWordmap = null;
+    let patternToWordmap = {};
     for (let word of wordList) {
         if(word !== beginWord) {
         for (let i=0; i<word.length; i++) {
@@ -21,9 +21,9 @@ var ladderLength = function(beginWord, endWord, wordList) {
         }
     }
     function addPatternToWord(pattern, word) {
-        if(patternToWordmap === null) {
-            patternToWordmap = {}
-        }
+        // if(patternToWordmap === null) {
+        //     patternToWordmap = {}
+        // }
         if(!patternToWordmap[pattern]) {
             patternToWordmap[pattern] = []
         }
